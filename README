@@ -45,10 +45,22 @@ to named_generator, invoking the generator as
 named_generator will cause it to output a NamedBase
 generator instead of a Base generator.
 
+Secondary note:  You'll want to clone the repo like so:
+
+git clone git@github.com:darthschmoo/i_am_gog_generator_of_generators.git generator
+
+Without the 'generator' at the end, every time you use gog,
+you'll have to type:
+
+   script/generate i_am_gog_generator_of_generators SaltedCookie
+
+and I don't see that being fun for anybody.
+
+
 
 Feedback
 ========
 
 If you have any advice or feedback, or just want to let
 me know that you're using this, e-mail me at
-bryce[AT]eng[DOT]utah[DOT]edu.
+brycea[AT]eng[DOT]utah[DOT]edu.
