@@ -1,56 +1,11 @@
-IHazAYoorel
-===========
+<%= singular_name.camelcase %>
+<%= '=' * singular_name.camelcase.length %>
 
-A simple generator that adds a URL shortening service
-to an app.  Includes some very simple views and
-controller functionality, which you'll probably want
-to expand upon and experiment with.
+Some kinda description thingy goes here.
 
-Add the i_haz_a_yoorel to your .rails/generators
-folder, or to your project's generators folder,
-then run:
+More documentation goes here.
 
-  script/generate i_haz_a_yoorel
-  rake db:migrate
+Why not throw in a three page summary of the
+economic theories of Milton Friedman?
 
-it will create a table called url_redirections to
-store redirection information.
-
-You'll probably want to modify the code to suit
-your needs.  By default:
-
-  * Url ids start at url/1 and go to url/z.
-  * Url ids are case insensitive.
-  * Urls don't expire or track the last time they
-    were used.
-  * Urls do keep track of the number of times they've
-    been used.
-  * No checks are done to ensure that the URL given
-    is valid, safe, not a phishing site, or suitable
-    for children.
-
-To create a new URL, go to http://your.app/url_redirection/new.
-
-
-Routing
-=======
-
-Since URL shortening services are supposed to give you
-*short* urls, the default route '/url_redirection/redirect/b0byzx'
-is probably inadequate.  I'd recommend adding something like
-the following to your config/routes.rb:
-
-  map.redirection '/url/:id',
-                  :controller => 'url_redirection',
-                  :action => 'redirect'
-
-which should give you nice urls like 'url/b0byzx'.
-
-Note:  The example view uses the redirection_url function,
-which assumes that something like this is already
-present in your routing.
-
-
-
-
-Copyright (c) 2008 Bryce Anderson, released under the MIT license
+Copyright (c) 20XX Some Human, released under the MIT license

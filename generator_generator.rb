@@ -35,7 +35,7 @@ class GeneratorGenerator < Rails::Generator::NamedBase
 
       m.template( "generator.rb", File.join( @generator_dir, "#{@singular_name}_generator.rb" ) )
       m.file( "#{@license}-LICENSE", File.join( @generator_dir, "#{@license}-LICENSE" ) ) if LICENSES.include?( @license )
-
+      m.template( "README", File.join( @generator_dir, "README" ) )
       m.template( "migration.rb", File.join( @template_dir, "migration.rb")) if @migration
     end
   end
