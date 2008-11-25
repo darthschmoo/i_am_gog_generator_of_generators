@@ -1,0 +1,54 @@
+Generator of Generators
+=======================
+
+A Rails generator that generates -- what else? --
+other generators.
+
+
+This project took some inspiration from
+rails-generator-generator, which can be found at:
+
+http://github.com/spejman/rails-generator-generator/tree/master
+
+Hopefully people will find this one to be more
+configurable.  Plus I put some example code and
+explanations in the generated generator file.
+I hope more people like that than hate it.
+
+
+Examples
+========
+
+script/generate generator SaltedAndHashedCookie
+   create  vendor/generators/salted_and_hashed_cookie
+   create  vendor/generators/salted_and_hashed_cookie/templates
+   create  vendor/generators/salted_and_hashed_cookie/salted_and_hashed_cookie_generator.rb
+   create  vendor/generators/salted_and_hashed_cookie/MIT-LICENSE
+
+
+script/generate generator ButterflyMigration dir=vendor/plugins
+      exists  vendor/plugins
+      create  vendor/plugins/templates
+      create  vendor/plugins/butterfly_migration_generator.rb
+      create  vendor/plugins/MIT-LICENSE
+      create  vendor/plugins/templates/migration.rb
+
+If your name argument ends in "migration", it will
+automatically generate a migration template, which
+will be placed in the migrations directory when
+the generated generator is run.  In the previous
+example, it would be called "create_butterfly_migration.rb"
+
+
+Note:  If you do a symlink from the generator directory
+to named_generator, invoking the generator as
+named_generator will cause it to output a NamedBase
+generator instead of a Base generator.
+
+
+Feedback
+========
+
+If you have any advice or feedback, or just want to let
+me know that you're using this, e-mail me at
+bryce[AT]eng[DOT]utah[DOT]edu.
