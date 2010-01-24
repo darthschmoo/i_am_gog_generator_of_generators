@@ -12,6 +12,14 @@ class <%= class_name %>Generator < Rails::Generator::<%= "Named" if named %>Base
   end
 
   def manifest
+    action = File.basename($0)
+    case action
+    when "generate"
+      puts "Thank you for using this generator.  Good fortune be with you."
+    when "destroy"
+      puts "Please fill out a brief survey explaining why you are dissatisfied with this generator"
+    end
+
     record do |m|
       # Sample actions:
       #
@@ -31,13 +39,8 @@ class <%= class_name %>Generator < Rails::Generator::<%= "Named" if named %>Base
       m.migration( "create_#{singular_name}.rb", migration_directory)
       <% end %>
     end
-
-    case action
-    when "generate"
-      puts "Thank you for using this generator.  Good fortune be with you."
-    when "destroy"
-      puts "Please fill out a brief survey explaining why you are dissatisfied with this generator"
-    end
+    # this function is expected to return the manifest object m,
+    # so no code below this line.
   end
 
   protected
